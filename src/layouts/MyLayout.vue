@@ -1,87 +1,67 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
+  <q-layout view="hhh lpr fff">
+    <q-header elevated reveal>
       <q-toolbar>
         <q-btn
           flat
           dense
           round
           @click="leftDrawerOpen = !leftDrawerOpen"
-          icon="menu"
+          icon="fas fa-bars"
           aria-label="Menu"
         />
 
         <q-toolbar-title>
-          Quasar App
+          Rafael E. Ferrero
         </q-toolbar-title>
 
-        <div>Quasar v{{ $q.version }}</div>
       </q-toolbar>
     </q-header>
 
+    <q-footer elevated>
+      <div><small>Powered by </small>Quasar v{{ $q.version }}</div>
+    </q-footer>
+
     <q-drawer
       v-model="leftDrawerOpen"
-      show-if-above
       bordered
       content-class="bg-grey-2"
+      side="left"
+      behavior="mobile"
+      overlay
     >
-      <q-list>
-        <q-item-label header>Essential Links</q-item-label>
-        <q-item clickable tag="a" target="_blank" href="https://quasar.dev">
-          <q-item-section avatar>
-            <q-icon name="school" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Docs</q-item-label>
-            <q-item-label caption>quasar.dev</q-item-label>
-          </q-item-section>
-        </q-item>
-        <q-item clickable tag="a" target="_blank" href="https://github.quasar.dev">
-          <q-item-section avatar>
-            <q-icon name="code" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Github</q-item-label>
-            <q-item-label caption>github.com/quasarframework</q-item-label>
-          </q-item-section>
-        </q-item>
-        <q-item clickable tag="a" target="_blank" href="https://chat.quasar.dev">
-          <q-item-section avatar>
-            <q-icon name="chat" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Discord Chat Channel</q-item-label>
-            <q-item-label caption>chat.quasar.dev</q-item-label>
-          </q-item-section>
-        </q-item>
-        <q-item clickable tag="a" target="_blank" href="https://forum.quasar.dev">
-          <q-item-section avatar>
-            <q-icon name="record_voice_over" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Forum</q-item-label>
-            <q-item-label caption>forum.quasar.dev</q-item-label>
-          </q-item-section>
-        </q-item>
-        <q-item clickable tag="a" target="_blank" href="https://twitter.quasar.dev">
-          <q-item-section avatar>
-            <q-icon name="rss_feed" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Twitter</q-item-label>
-            <q-item-label caption>@quasarframework</q-item-label>
-          </q-item-section>
-        </q-item>
-        <q-item clickable tag="a" target="_blank" href="https://facebook.quasar.dev">
-          <q-item-section avatar>
-            <q-icon name="public" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Facebook</q-item-label>
-            <q-item-label caption>@QuasarFramework</q-item-label>
-          </q-item-section>
-        </q-item>
-      </q-list>
+      <q-scroll-area style="height: calc(100% - 150px); margin-top: 150px;">
+        <q-list>
+          <q-item clickable tag="a" target="_blank" href="https://www.linkedin.com/in/rafaeleferrero">
+            <q-item-section avatar>
+              <q-icon name="fas fa-book" />
+            </q-item-section>
+            <q-item-section>
+              <q-item-label>Lea mi Blog</q-item-label>
+              <!-- <q-item-label caption>@rafaeleferrero</q-item-label> -->
+            </q-item-section>
+          </q-item>
+          <q-item clickable tag="a" target="_blank" href="https://www.linkedin.com/in/rafaeleferrero">
+            <q-item-section avatar>
+              <q-icon name="fas fa-at" />
+            </q-item-section>
+            <q-item-section>
+              <q-item-label>Escríbame</q-item-label>
+              <!-- <q-item-label caption>@rafaeleferrero</q-item-label> -->
+            </q-item-section>
+          </q-item>
+        </q-list>
+      </q-scroll-area>
+
+      <q-img class="absolute-top bg-primary center" style="height: 150px">
+        <div class="absolute-center text-center bg-transparent">
+          <q-avatar size="90px" class="q-mb-sm">
+            <img src="~assets/me.jpg">
+          </q-avatar>
+          <div class="text-weight-bold">Rafael E. Ferrero</div>
+        </div>
+      </q-img>
+
     </q-drawer>
 
     <q-page-container>
